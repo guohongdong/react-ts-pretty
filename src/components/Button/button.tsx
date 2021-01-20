@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { AnchorHTMLAttributes, ButtonHTMLAttributes, FC } from 'react';
 import classNames from 'classnames'
 
 export enum ButtonSize {
@@ -22,15 +22,21 @@ interface BaseButtonProps {
     href?: string
 }
 
-const Button: FC<BaseButtonProps> = (props) => {
+type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>
+type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>
+export type ButtonProps = Partial<NativeButtonProps&AnchorButtonProps> 
+
+const Button: FC<ButtonProps> = (props) => {
     const {
+        className,
         btnType,
         disabled,
         size,
         children,
-        href
+        href,
+        ...restProps
     } = props
-    const classes = classNames('btn', {
+    const classes = classNames('btn', className,{
         [`btn-${btnType}`]: btnType,
         [`btn-${size}`]: size,
         'disabled': (btnType === ButtonType.Link) && disabled
@@ -41,6 +47,7 @@ const Button: FC<BaseButtonProps> = (props) => {
             <a
                 className={classes}
                 href={href}
+                {...restProps}
             >
                 {children}
             </a>
@@ -50,6 +57,7 @@ const Button: FC<BaseButtonProps> = (props) => {
             <button
                 className={classes}
                 disabled={disabled}
+                {...restProps}
             >
                 {children}
             </button>
