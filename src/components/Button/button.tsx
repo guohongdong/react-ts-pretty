@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 export enum ButtonSize {
     Large = 'lg',
-    Small = 'small'
+    Small = 'sm'
 }
 
 export enum ButtonType {

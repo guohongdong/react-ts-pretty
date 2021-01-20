@@ -6,7 +6,10 @@ function App() {
     <div className="App">
       <Button>你好</Button>
       <Button btnType={ButtonType.Primary}>你好</Button>
+      <Button btnType={ButtonType.Danger}>你好</Button>
+      <Button btnType={ButtonType.Danger} size={ButtonSize.Small}>你好</Button>
       <Button size={ButtonSize.Large} btnType={ButtonType.Link} href="https://jd.com">你好</Button>
+      <Button size={ButtonSize.Small} btnType={ButtonType.Link} href="https://jd.com" disabled>你好</Button>
       <header className="App-header">
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
