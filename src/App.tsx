@@ -1,9 +1,17 @@
 import React from 'react';
 import Button, { ButtonSize, ButtonType } from './components/Button/button'
+import Alert from './components/Alert/alert'
 
 function App() {
   return (
     <div className="App">
+      <Alert type="default" title="操作成功" description="感谢您的使用" closable></Alert>
+      <br/>
+      <Alert type="success" title="操作成功" description="感谢您的使用"></Alert>
+      <br/>
+      <Alert type="warning" title="操作成功" description="感谢您的使用"></Alert>
+      <br/>
+      <Alert type="danger" title="操作成功" description="感谢您的使用"></Alert>
       <Button>你好</Button>
       <Button btnType={ButtonType.Primary}>你好</Button>
       <Button btnType={ButtonType.Danger}>你好</Button>

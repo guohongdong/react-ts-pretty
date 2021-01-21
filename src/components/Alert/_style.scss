@@ -1,0 +1,37 @@
+.alert {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: $border-width solid transparent;
+  border-radius: $border-radius;
+  color: $white;
+  &-title {
+    font-weight: $font-weight-bold;
+  }
+  &-desc{
+     font-size: $font-size-base; 
+     margin: 0.25em 0 0;
+  }
+  &-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.75rem 1.25rem;
+    color: inherit;
+    cursor: pointer;
+  }
+}
+.alert-success {
+  background-color: $green;
+}
+.alert-warning {
+  background-color: $orange;
+}
+.alert-danger {
+  background-color: $red;
+}
+.alert-default {
+  background-color: $blue;
+}
+
+
