@@ -7,10 +7,15 @@ import MenuItem from './components/Menu/menuItem'
 function App() {
   return (
     <div className="App">
-      <Menu>
-        <MenuItem>选项一</MenuItem>
-        <MenuItem>选项一</MenuItem>
-        <MenuItem>选项一</MenuItem>
+      <Menu onSelect={(index)=>{console.log(index)}}>
+        <MenuItem index={0}>选项一</MenuItem>
+        <MenuItem index={1}>选项一</MenuItem>
+        <MenuItem index={2}>选项一</MenuItem>
+      </Menu>
+      <Menu mode="vertical">
+        <MenuItem index={0}>选项一</MenuItem>
+        <MenuItem index={1}>选项一</MenuItem>
+        <MenuItem index={2}>选项一</MenuItem>
       </Menu>
       <Alert type="default" title="操作成功" description="感谢您的使用" closable></Alert>
       <br/>
